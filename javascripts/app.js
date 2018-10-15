@@ -5,7 +5,8 @@
 var myRover = {
   xPosition: 0,
   yPosition: 0,
-  direction: 'S'
+  direction: 'N',
+  travelLog: []
 };
 
 function turnLeft(rover){
@@ -43,6 +44,7 @@ function turnRight(rover){
 }
 
 function moveForward(rover){
+  rover.travelLog.push(rover.xPosition + "," + rover.yPosition);
   switch(rover.direction){
     case 'N':
       rover.yPosition--;
@@ -77,5 +79,6 @@ function commands(rover, input){
     }
   }
 }
-
-commands(myRover,"rfl");
+//myRover is driving a square around the border of the grid :)
+commands(myRover,"llfffflfffflfffflfffff");
+console.log(myRover.travelLog);
