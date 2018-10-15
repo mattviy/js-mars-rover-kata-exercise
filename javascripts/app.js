@@ -3,7 +3,9 @@
 
 // ======================
 var myRover = {
-  direction: 'N'
+  xPosition: 0,
+  yPosition: 0,
+  direction: 'S'
 };
 
 function turnLeft(rover){
@@ -43,22 +45,22 @@ function turnRight(rover){
 function moveForward(rover){
   switch(rover.direction){
     case 'N':
-      
+      rover.yPosition--;
       break;
     case 'E':
-      
+      rover.xPosition++;
       break;
     case 'S':
-      
+      rover.yPosition++;
       break;
     case 'W':
-      
+      rover.xPosition--;
       break;
   }
 }
 
-turnRight(myRover);
-console.log(myRover.direction);
+moveForward(myRover);
+console.log(myRover.yPosition + ", " +myRover.xPosition);
 
 
 
