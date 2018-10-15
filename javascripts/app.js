@@ -54,14 +54,14 @@ function moveForward(rover){
       }
       break;
     case 'E':
-      if (rover.xPosition == 4){
+      if (rover.xPosition == 10){
         console.log("Rover reached the boundary, can't move forward.");
       } else { 
         rover.xPosition++;
       }
       break;
     case 'S':
-      if (rover.yPosition == 4){
+      if (rover.yPosition == 10){
         console.log("Rover reached the boundary, can't move forward.");
       } else {
         rover.yPosition++;
