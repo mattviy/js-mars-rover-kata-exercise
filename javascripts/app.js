@@ -96,6 +96,5 @@ function commands(rover, input){
   }
 }
 
-//myRover is driving a square around the border of the grid :)
 commands(myRover,"llfffflfffflfffflfffff");
 console.log(myRover.travelLog);
