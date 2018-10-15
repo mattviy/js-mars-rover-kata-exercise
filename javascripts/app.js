@@ -59,8 +59,23 @@ function moveForward(rover){
   }
 }
 
-moveForward(myRover);
-console.log(myRover.yPosition + ", " +myRover.xPosition);
+function commands(rover, input){
+  for (var i = 0; i < input.length; i++){
+    switch(input[i]){
+      case 'f':
+      moveForward(rover);
+      console.log(rover.yPosition + ", " + rover.xPosition);
+      break; 
+      case 'r':
+      turnRight(rover);
+      console.log("rover turned right");
+      break;
+      case 'l':
+      turnLeft(rover);
+      console.log("rover turned left");
+      break;
+    }
+  }
+}
 
-
-
+commands(myRover,"rfl");
