@@ -47,17 +47,33 @@ function moveForward(rover){
   rover.travelLog.push(rover.xPosition + "," + rover.yPosition);
   switch(rover.direction){
     case 'N':
-      rover.yPosition--;
+      if (rover.yPosition == 0){
+        console.log("Rover reached the boundary, can't move forward.");
+      } else {
+        rover.yPosition--;
+      }
       break;
     case 'E':
-      rover.xPosition++;
+      if (rover.xPosition == 4){
+        console.log("Rover reached the boundary, can't move forward.");
+      } else { 
+        rover.xPosition++;
+      }
       break;
     case 'S':
-      rover.yPosition++;
+      if (rover.yPosition == 4){
+        console.log("Rover reached the boundary, can't move forward.");
+      } else {
+        rover.yPosition++;
+      }
       break;
     case 'W':
+    if (rover.xPosition == 0){
+      console.log("Rover reached the boundary, can't move forward.");
+    } else {
       rover.xPosition--;
-      break;
+    }
+    break;
   }
 }
 
@@ -80,5 +96,5 @@ function commands(rover, input){
   }
 }
 //myRover is driving a square around the border of the grid :)
-commands(myRover,"llfffflfffflfffflfffff");
+commands(myRover,"llf");
 console.log(myRover.travelLog);
